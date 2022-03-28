@@ -37,17 +37,12 @@ int dist(string a, string b) {
 		for (int j = 1; j <= lb; j++) {
 			if (a[i-1] == b[j-1]) {
 				dis[i][j] = dis[i - 1][j - 1];
-				//cout << "dis[" << i << "]" << "[" << j << "]" << "=" << dis[i][j] << endl;
 			}
 			else {
 				dis[i][j] = minest(dis[i - 1][j - 1], dis[i - 1][j], dis[i][j - 1]) + 1;
-				//cout << "dis[" << i << "]" << "[" << j << "]" << "=" << dis[i][j] << endl;
 			}
 		}
 	}
-	//cout << dis[0][1] << endl;
-	//cout << dis[0][2] << endl;
-	//cout << dis[0][3] << endl;
 	return dis[la][lb];
 }
 
